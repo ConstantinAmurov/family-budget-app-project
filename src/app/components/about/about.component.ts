@@ -12,4 +12,8 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  logSmth() {
+    console.log("About event");
+  }
+
 }

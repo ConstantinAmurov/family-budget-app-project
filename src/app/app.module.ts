@@ -14,10 +14,13 @@ import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { AboutComponent } from './components/about/about.component';
 import { BudgetComponent } from './components/budget/budget.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ButtonComponent } from './components/button/button.component';
+import { CardStatsComponent } from './components/cards/card-stats/card-stats.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 @NgModule({
-  declarations: [AppComponent, TopNavComponent, AboutComponent, BudgetComponent],
+  declarations: [AppComponent, TopNavComponent, AboutComponent, BudgetComponent, ButtonComponent, CardStatsComponent, DashboardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
