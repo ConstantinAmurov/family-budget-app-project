@@ -17,10 +17,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ButtonComponent } from './components/button/button.component';
 import { CardStatsComponent } from './components/cards/card-stats/card-stats.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { BudgetsComponent } from './components/budgets/budgets.component';
+import { BudgetItemComponent } from './components/budget-item/budget-item.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
-  declarations: [AppComponent, TopNavComponent, AboutComponent, BudgetComponent, ButtonComponent, CardStatsComponent, DashboardComponent],
+  declarations: [AppComponent, TopNavComponent, AboutComponent, BudgetComponent, ButtonComponent, CardStatsComponent, DashboardComponent, BudgetsComponent, BudgetItemComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -31,6 +34,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     MatButtonModule,
     MatIconModule,
     NgbModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
