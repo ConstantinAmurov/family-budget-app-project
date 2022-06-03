@@ -31,4 +31,11 @@ export class BudgetsComponent implements OnInit {
           ))
       );
   }
+
+  addItem(newItem: Budget) {
+    this.budgetService.onAdd(newItem).subscribe((newItem) => {
+      debugger;
+      this.budgets.push(newItem);
+    });
+  }
 }

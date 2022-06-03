@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,10 +21,21 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { BudgetsComponent } from './components/budgets/budgets.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BudgetEditComponent } from './components/budget-edit/budget-edit.component';
-
+import { BudgetAddFormComponent } from './components/budget-add-form/budget-add-form.component';
 
 @NgModule({
-  declarations: [AppComponent, TopNavComponent, AboutComponent, BudgetComponent, ButtonComponent, CardStatsComponent, DashboardComponent, BudgetsComponent, BudgetEditComponent],
+  declarations: [
+    AppComponent,
+    TopNavComponent,
+    AboutComponent,
+    BudgetComponent,
+    ButtonComponent,
+    CardStatsComponent,
+    DashboardComponent,
+    BudgetsComponent,
+    BudgetEditComponent,
+    BudgetAddFormComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -36,7 +47,8 @@ import { BudgetEditComponent } from './components/budget-edit/budget-edit.compon
     MatIconModule,
     NgbModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

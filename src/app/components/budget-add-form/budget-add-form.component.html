@@ -1,0 +1,46 @@
+<h1>Add New Info</h1>
+<form action="" (ngSubmit)="onSubmit()">
+  <div class="row my-10">
+    <div class="col">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          name="title"
+          [(ngModel)]="title"
+          placeholder="Title"
+        />
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label for="Amount">Amount</label>
+        <input
+          type="number"
+          class="form-control"
+          name="amount"
+          [(ngModel)]="amount"
+          placeholder="Amount"
+        />
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label for="Category">Category</label>
+        <input
+          type="text"
+          class="form-control"
+          name="category"
+          [(ngModel)]="category"
+          placeholder="Category"
+        />
+      </div>
+    </div>
+    <div class="col flex items-center">
+      <button type="submit" class="btn btn-primary mx-auto">
+        Add New Info
+      </button>
+    </div>
+  </div>
+</form>

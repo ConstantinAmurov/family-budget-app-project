@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { APP_ID, Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
@@ -28,5 +28,10 @@ export class BudgetService {
     const url = endpoint + api.budgets + id;
     debugger;
     return this.http.delete<Budget>(url);
+  }
+
+  onAdd(budget: Budget): Observable<Budget> {
+    const url = endpoint + api.budgets;
+    return this.http.post<Budget>(url, budget);
   }
 }
