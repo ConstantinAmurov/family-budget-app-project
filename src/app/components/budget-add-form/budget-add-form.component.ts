@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { BudgetService } from 'src/app/services/budget.service';
 import { Budget } from 'src/app/Budget';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-budget-add-form',
@@ -14,7 +15,7 @@ export class BudgetAddFormComponent implements OnInit {
   category: string;
   title: string;
 
-  constructor(private budgetService: BudgetService) {}
+  constructor(private budgetService: BudgetService, private router : Router) {}
 
   ngOnInit(): void {}
 
@@ -44,5 +45,7 @@ export class BudgetAddFormComponent implements OnInit {
     this.amount = 0;
     this.category = '';
     this.title = '';
+
+    alert('New Budget Entry has been Added succesfully');
   }
 }

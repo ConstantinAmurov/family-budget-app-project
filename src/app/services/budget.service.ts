@@ -18,10 +18,8 @@ export class BudgetService {
     return this.http.get<Budget[]>(endpoint + api.budgets);
   }
 
-  getBudget(id: number): Observable<Budget[]> {
-    return this.getBudgets().pipe(
-      map((budgets: any[]) => budgets.find((budget) => budget.id == id))
-    );
+  getBudget(id: number): Observable<Budget> {
+    return this.http.get<Budget>(endpoint + api.budgets + id);
   }
 
   onDelete(id: number): Observable<Budget> {
@@ -33,5 +31,11 @@ export class BudgetService {
   onAdd(budget: Budget): Observable<Budget> {
     const url = endpoint + api.budgets;
     return this.http.post<Budget>(url, budget);
+  }
+
+  onEdit(budget: Budget): Observable<Budget> {
+    debugger;
+    const url = endpoint + api.budgets+ budget.id;
+    return this.http.put<Budget>(url, budget);
   }
 }

@@ -1,27 +1,39 @@
-<div class="container">
-  <form>
+<div class="container mt-20">
+  <h1>Edit Budget Entry</h1>
+  <form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="title">Title</label>
-      <input type="text" class="form-control" id="title" placeholder="Title" />
+      <input
+        type="text"
+        class="form-control"
+        name="title"
+        placeholder="Title"
+        value="{{ budget.title }}"
+        [(ngModel)]="budget.title"
+      />
     </div>
-    <div class="form-group">
+    <div class="form-group mt-2">
       <label for="Amount">Amount</label>
       <input
         type="number"
         class="form-control"
-        id="Amount"
+        name="Amount"
         placeholder="Amount"
+        value="{{ budget.amount }}"
+        [(ngModel)]="budget.amount"
       />
     </div>
-    <div class="form-group">
+    <div class="form-group mt-2">
       <label for="Category">Category</label>
       <input
         type="text"
         class="form-control"
-        id="category"
+        name="category"
         placeholder="Category"
+        value="{{ budget.category }}"
+        [(ngModel)]="budget.category"
       />
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary mt-4">Submit</button>
   </form>
 </div>
