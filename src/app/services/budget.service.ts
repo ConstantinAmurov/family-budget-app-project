@@ -4,19 +4,18 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { BUDGET } from '../mock-budget';
 import { Budget } from '../Budget';
+import { url, api } from '../api';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BudgetService {
   budgets: Budget[] = [];
-  private apiUrl = 'http://localhost:5000/tasks';
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   getBudgets(): Observable<Budget[]> {
-    const budgets = of(BUDGET);
-    return budgets;
+    return this.http.get<Budget[]>(url + api.budgets);
   }
 
   getBudget(id: number): Observable<Budget[]> {
