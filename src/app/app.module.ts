@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,12 +19,12 @@ import { ButtonComponent } from './components/button/button.component';
 import { CardStatsComponent } from './components/cards/card-stats/card-stats.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { BudgetsComponent } from './components/budgets/budgets.component';
-import { BudgetItemComponent } from './components/budget-item/budget-item.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BudgetEditComponent } from './components/budget-edit/budget-edit.component';
 
 
 @NgModule({
-  declarations: [AppComponent, TopNavComponent, AboutComponent, BudgetComponent, ButtonComponent, CardStatsComponent, DashboardComponent, BudgetsComponent, BudgetItemComponent],
+  declarations: [AppComponent, TopNavComponent, AboutComponent, BudgetComponent, ButtonComponent, CardStatsComponent, DashboardComponent, BudgetsComponent, BudgetEditComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -35,6 +36,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatIconModule,
     NgbModule,
     FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

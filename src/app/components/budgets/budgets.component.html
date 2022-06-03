@@ -1,6 +1,39 @@
-<div class="container my-10">
-  <app-budget-item
-    *ngFor="let budget of budgets"
-    [budget]="budget"
-  ></app-budget-item>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Title</th>
+        <th scope="col">Category</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let budget of budgets; index as i">
+        <th scope="row">{{ budget.id }}</th>
+        <td>
+          {{ budget.amount }}
+        </td>
+        <td>{{ budget.title }}</td>
+        <td>{{ budget.category }}</td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-danger mx-2"
+            (click)="deleteItem(budget.id)"
+          >
+            Delete
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary mx-2"
+            routerLink="{{budget.id}}/edit"
+          >
+            Edit
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
