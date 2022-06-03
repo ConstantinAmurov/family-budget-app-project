@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Budget } from '../Budget';
+import { Budget } from '../../Budget';
 
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
