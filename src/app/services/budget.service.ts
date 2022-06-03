@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { BUDGET } from '../mock-budget';
 import { Budget } from '../Budget';
-import { url, api } from '../api';
+import { endpoint, api } from '../api';
 
 @Injectable({
   providedIn: 'root',
@@ -15,12 +15,18 @@ export class BudgetService {
   constructor(private http: HttpClient) {}
 
   getBudgets(): Observable<Budget[]> {
-    return this.http.get<Budget[]>(url + api.budgets);
+    return this.http.get<Budget[]>(endpoint + api.budgets);
   }
 
   getBudget(id: number): Observable<Budget[]> {
     return this.getBudgets().pipe(
       map((budgets: any[]) => budgets.find((budget) => budget.id == id))
     );
+  }
+
+  onDelete(id: number): Observable<Budget> {
+    const url = endpoint + api.budgets + id;
+    debugger;
+    return this.http.delete<Budget>(url);
   }
 }

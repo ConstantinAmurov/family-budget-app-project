@@ -22,8 +22,13 @@ export class BudgetsComponent implements OnInit {
   }
 
   deleteItem(id: number) {
-    console.log(id);
-    this.budgets = this.budgets.filter((budget) => budget.id !== id);
+    this.budgetService
+      .onDelete(id)
+      .subscribe(
+        (deletedBudget) =>
+          (this.budgets = this.budgets.filter(
+            (budget) => budget.id !== deletedBudget.id
+          ))
+      );
   }
-
 }
